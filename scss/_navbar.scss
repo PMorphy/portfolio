@@ -1,0 +1,43 @@
+@import 'constants';
+.navbar {
+  height: 13rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: $primary-color;
+  padding: 3.6rem 6rem;
+  padding-top: 5.3rem;
+  position: fixed;
+  z-index: 10;
+
+  .navbar-logo {
+    font-size: clamp(2.4rem, 2.1vw, 4.2rem);
+  }
+
+  .navbar-menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 3.6rem;
+
+    li {
+      a {
+        font-size: clamp(1.4rem, 1.8vw, 1.8rem);
+        color: $text-menu-color;
+        transition: all 0.3s;
+      }
+      a:hover {
+        color: $text-color-white;
+      }
+    }
+
+    @media (max-width: $home-flip-break) {
+      display: none;
+    }
+  }
+
+  button:hover {
+    background-color: rgba($color: #fff, $alpha: 0.1);
+  }
+}

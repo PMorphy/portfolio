@@ -1,0 +1,26 @@
+@import 'constants';
+
+.container {
+  max-width: $desktop-lg;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 0 4rem;
+  height: 100%;
+  width: 100%;
+
+  @media (max-width: $laptop) {
+    padding: 0 2rem;
+  }
+
+  @media (max-width: $mobile-lg) {
+    padding: 0 0rem;
+  }
+}
+
+.bg-primary {
+  background-color: $primary-color;
+}
+
+.bg-secondary {
+  background-color: $secondary-color;
+}

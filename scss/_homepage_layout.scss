@@ -1,0 +1,135 @@
+@import 'constants';
+
+.hello {
+  height: 90rem;
+  width: 100%;
+  padding-top: 7rem;
+
+  &-grid {
+    display: grid;
+    grid-template-columns: 8fr 6fr;
+    grid-template-areas: 'hello-text-area hello-image-area';
+    grid-template-rows: 1fr;
+    margin-top: 5.8rem;
+  }
+
+  .hello-text-area {
+    grid-area: hello-text-area;
+    width: 100%;
+    h2,
+    h3 {
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    h2 {
+      font-size: 8.4rem;
+      margin-top: 0.8rem;
+
+      @media (max-width: $home-break) {
+        font-size: 7.6rem;
+        margin-top: 0.6rem;
+      }
+    }
+
+    h3 {
+      font-size: 7.2rem;
+      margin-top: 1.4rem;
+
+      @media (max-width: $home-break) {
+        font-size: 6.4rem;
+        margin-top: 3.2rem;
+      }
+    }
+
+    p {
+      margin-top: 3.2rem;
+      font-size: 2.4rem;
+    }
+
+    button {
+      margin-top: 6.4rem;
+    }
+
+    button:hover {
+      background-color: rgba($color: #fff, $alpha: 0.1);
+    }
+  }
+
+  .hello-image-area {
+    grid-area: hello-image-area;
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+    .temp-image {
+      display: block;
+      width: 60rem;
+      height: 72rem;
+      background-color: $secondary-color;
+      position: absolute;
+      top: 11rem;
+      left: -6rem;
+      background-color: aquamarine;
+
+      @media (max-width: $home-break) {
+        width: 47rem;
+        height: 64rem;
+      }
+    }
+  }
+
+  @media (max-width: $home-flip-break) {
+    height: 140rem;
+
+    .hello-grid {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        'hello-image-area'
+        'hello-text-area';
+      grid-template-rows: 80rem 45rem;
+    }
+
+    .hello-image-area {
+      height: 80rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .temp-image {
+        display: block;
+        position: static;
+      }
+    }
+
+    .hello-text-area {
+      height: 80rem;
+    }
+  }
+}
+
+.services {
+  height: 90rem;
+}
+
+.about {
+  height: 90rem;
+}
+
+.portfolio {
+  height: 90rem;
+}
+
+.skills {
+  height: 90rem;
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(10%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
